@@ -1,5 +1,7 @@
 import tkinter as tk
+from tkinter import ttk
 import requests
+from requests import headers
 import tqdm as tqdm
 import os
 import shutil
@@ -35,7 +37,7 @@ download_btn = tk.Button(window, text="Download", command=file_download)
 download_btn.pack()
 
 # Create the progress bar
-progress_bar = tk.ttk.Progressbar(window, orient="horizontal", length=300, mode="determinate")
+progress_bar = ttk.Progressbar(window, orient="horizontal", length=300, mode="determinate")
 progress_bar.pack()
 
 window.mainloop()
