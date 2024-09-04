@@ -26,7 +26,7 @@ def file_download():
 window = tk.Tk()
 
 # Input field and download button
-in_label = tk.Label(window, text="Download URL")
+in_label = tk.Label(window, text="Download URL: ")
 in_label.pack()
 
 url_entry = tk.Entry(window)
