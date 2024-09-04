@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
 import requests
-from requests import headers
 import tqdm as tqdm
 import os
 import shutil
@@ -11,7 +10,7 @@ def file_download():
     url = url_entry.get()
     response = requests.get(url, stream=True)
     
-    total_size = int(response, headers.get("content-length", 0))
+    total_size = int(response, response.headers.get("content-length", 0))
     
     with open("downloaded_file.zip", "wb") as f, tqdm(total=total_size, unit="B", unit_scale=True, desc=url) as p:
         for data in response.iter_content(chunk_size=1024):
